@@ -41,4 +41,9 @@ CREATE TABLE comment  (
 	comment VARCHAR
 );
 
-Insert into user(username, password, email, date_created) Values('Me', 'MyPassword', 'MyEmail', 'TODAY');
+INSERT INTO user(username, password, email, date_created) VALUES('Admin', 'AdminPassword', 'AdminEmail', 'TODAY');
+INSERT INTO user(username, password, email, date_created) VALUES('Taaa','nogoodpass','aMail','TODAY');
+
+INSERT INTO owner(id) VALUES(1);
+INSERT INTO restaurant(owner_id,name,local) VALUES(1,'Pidgey na Brasa','Pallet Town');
+INSERT INTO restaurant(owner_id,name,local) VALUES(1,'Krusty Krabby','Celadon City');

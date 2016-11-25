@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <meta charset="utf-8"/>
-        <link href="styles/clear.css" rel="stylesheet">
-        <link href="styles/mainstyle.css" rel="stylesheet">
-    </head>
     <body>
         <div id="header">
             <h1>My Restaurant Review Site</h1>
@@ -18,3 +10,12 @@
                 <label>Password: <input type="password"></label>
             </form>
 		</div>
+        <div id="menu">
+            <ul>
+                <li><a href="">Menu Option 1 (Ideas?)</a></li>
+                <li><a href="">Menu Option 2 (Ideas?)</a></li>
+            </ul>
+            <form>
+                <label>Search maybe...: <input type="text"></label>
+            </form>
+        </div>
