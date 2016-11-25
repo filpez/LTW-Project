@@ -1,0 +1,12 @@
+﻿/*
+------------------  Register Form ----------------------
+*/
+
+#register input{
+	width: 300px;
+	float: left;
+}
+
+#register img{
+	margin: 60px 40px;
+}
