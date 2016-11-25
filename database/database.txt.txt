@@ -1,0 +1,44 @@
+CREATE TABLE user  (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	username VARCHAR not NULL,
+	password VARCHAR not NULL,
+	email VARCHAR not NULL,
+	date_created DATE not NULL
+);
+
+CREATE TABLE owner  (
+	id INTEGER PRIMARY KEY REFERENCES user
+);
+
+CREATE TABLE reviewer  (
+	id INTEGER PRIMARY KEY REFERENCES user
+);
+
+
+
+CREATE TABLE restaurant  (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	owner_id INTEGER REFERENCES owner,
+	name VARCHAR not NULL,
+	local VARCHAR not NULL,
+	description VARCHAR,
+	opening_hours TIME,
+	closing_hours TIME
+);
+
+CREATE TABLE review  (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	reviewer_id INTEGER REFERENCES reviewer,
+	restaurant_id INTEGER REFERENCES restaurant,
+	points INTEGER not NULL,
+	comment VARCHAR
+);
+
+CREATE TABLE comment  (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	owner_id INTEGER REFERENCES owner,
+	review_id INTEGER REFERENCES review,
+	comment VARCHAR
+);
+
+Insert into user(username, password, email, date_created) Values('Me', 'MyPassword', 'MyEmail', 'TODAY');
