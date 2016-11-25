@@ -9,8 +9,9 @@
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
     </head>
-<?php
-	include('templates/header.php');
-	include('templates/list_restaurants.php');
-	include('templates/footer.php');
-?>
+	<?php
+		include('templates/header.php');
+		include('templates/list_restaurants.php');
+		include('templates/footer.php');
+	?>
+</html>
