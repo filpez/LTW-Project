@@ -1,5 +1,5 @@
         <div id="register">
-			<form action="" method="post">
+			<form action="database/createUser.php" method="post">
 				<label>USERNAME<input type="text" name="username"></label>
 				<div id="radioButton">
 					<p>TYPE OF USER</p>
