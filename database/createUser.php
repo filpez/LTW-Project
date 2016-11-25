@@ -8,6 +8,29 @@ $c_email = $_POST['c_email'];
 $type = $_POST['type'];
 $code = $_POST['code'];
 
+function addNewUser(){
+    global $db;
+    global $username;
+    global $password;
+    global $type;
+    global $email;
+
+    $hashed_password = sha1($password);
+    echo $hashed_password;
+
+    $stmt = $db->prepare("INSERT INTO user(username, password, email, date_created) VALUES('$username','$hashed_password', '$email', datetime('now'))");
+    $stmt->execute(); 
+    $stmt = $db->prepare("SELECT * FROM user WHERE username='$username'");
+    $stmt->execute();  
+    $result = $stmt->fetchAll();
+    $id = $result[0]['id'];
+    if ($type == "owner")
+        $stmt = $db->prepare("INSERT INTO owner(id) VALUES('$id')");
+    else
+        $stmt = $db->prepare("INSERT INTO reviewer(id) VALUES('$id')");
+    $stmt->execute(); 
+}
+
 function checkParameters() {
     global $db;
     global $username;
@@ -16,7 +39,7 @@ function checkParameters() {
     global $email;
     global $c_email;
     global $code;
-    if (strlen($username) < 8)
+    if (strlen($username) < 6)
         return "Username is too small...";
 
      if (strlen($password) < 8)
@@ -47,5 +70,10 @@ function checkParameters() {
         return "Email already exists";
 }
 
-echo checkParameters();
+if(checkParameters())
+    echo checkParameters();
+
+else{
+    addNewUser();
+}
 ?>
