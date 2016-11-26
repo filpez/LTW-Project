@@ -8,6 +8,7 @@
         <meta charset="utf-8"/>
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
+        <link href="styles/content.css" rel="stylesheet">
     </head>
 	<?php
 		include('templates/header.php');
