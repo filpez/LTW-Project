@@ -22,6 +22,6 @@
                 		<input type="submit" value="Search">
            			</form>
            		</li>
-           		<li><a href="">Advanced Search</a></li>
+           		<li><a href="search.php">Advanced Search</a></li>
             </ul>
         </div>

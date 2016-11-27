@@ -7,7 +7,7 @@
         if(isset($_GET['minimum_rating']))
            $query = $query . " AND (SELECT AVG(points) FROM review WHERE restaurant_id = restaurant.id) > " . $_GET['minimum_rating'];
         if(isset($_GET['local']))
-           $query = $query . " AND local LIKE %" . $_GET['minimum_rating'] . "%";
+           $query = $query . " AND local LIKE '%" . $_GET['local'] . "%'";
         if(isset($_GET['owner']))
            $query =  $query . " AND owner_id IN (SELECT id FROM user WHERE name Like '%" . $_GET['owner'] . "%')";
         $query = $query . " ORDER BY name LIMIT 10";
