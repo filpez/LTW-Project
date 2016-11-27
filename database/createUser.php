@@ -1,6 +1,7 @@
 <?php
 $db = new PDO('sqlite:database.db');
 $username = $_POST['username'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 $c_password = $_POST['c_password'];
 $email = $_POST['email'];
@@ -11,6 +12,7 @@ $code = $_POST['code'];
 function addNewUser(){
     global $db;
     global $username;
+    global $name;
     global $password;
     global $type;
     global $email;
@@ -18,7 +20,7 @@ function addNewUser(){
     $hashed_password = sha1($password);
     echo $hashed_password;
 
-    $stmt = $db->prepare("INSERT INTO user(username, password, email, date_created) VALUES('$username','$hashed_password', '$email', datetime('now'))");
+    $stmt = $db->prepare("INSERT INTO user(username, name, password, email, date_created) VALUES('$username', '$name', '$hashed_password', '$email', datetime('now'))");
     $stmt->execute(); 
     $stmt = $db->prepare("SELECT * FROM user WHERE username='$username'");
     $stmt->execute();  
@@ -34,6 +36,7 @@ function addNewUser(){
 function checkParameters() {
     global $db;
     global $username;
+    global $name;
     global $password;
     global $c_password;
     global $email;
@@ -41,8 +44,11 @@ function checkParameters() {
     global $code;
     if (strlen($username) < 6)
         return "Username is too small...";
+    
+    if (strlen($name) < 1)
+        return "Name is too small...";
 
-     if (strlen($password) < 8)
+    if (strlen($password) < 8)
         return "Password is too small...";
 
     if ($password != $c_password){

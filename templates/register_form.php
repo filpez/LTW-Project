@@ -1,6 +1,7 @@
         <div id="register">
 			<form action="database/createUser.php" method="post">
 				<label>USERNAME<input type="text" name="username"></label>
+				<label>NAME<input type="text" name="name"></label>
 				<div id="radioButton">
 					<p>TYPE OF USER</p>
 					<input type="radio" name="type" id="owner" value="owner" checked="checked">

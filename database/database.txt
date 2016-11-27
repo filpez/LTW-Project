@@ -1,8 +1,9 @@
-/* CREATE TABLES */
+﻿/* CREATE TABLES */
 
 CREATE TABLE user  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	username VARCHAR not NULL,
+	name VARCHAR not NULL,
 	password VARCHAR not NULL,
 	email VARCHAR not NULL,
 	date_created DATE not NULL
@@ -43,9 +44,9 @@ CREATE TABLE comment  (
 
 /* INSERTS */
 
-INSERT INTO user(username, password, email, date_created) VALUES('Admin', 'AdminPassword', 'AdminEmail', 'TODAY');
-INSERT INTO user(username, password, email, date_created) VALUES('Taaa','nogoodpass','aMail','TODAY');
-INSERT INTO user(username, password, email, date_created) VALUES('Xaaa','nogoodpass2','a2ndMail','TODAY');
+INSERT INTO user(username, name, password, email, date_created) VALUES('Admin', 'AdminName','AdminPassword', 'AdminEmail', 'TODAY');
+INSERT INTO user(username, name, password, email, date_created) VALUES('Taaa','TaaaName','nogoodpass','aMail','TODAY');
+INSERT INTO user(username, name, password, email, date_created) VALUES('Xaaa','Xaaaaaaa','nogoodpass2','a2ndMail','TODAY');
 
 INSERT INTO owner(id) VALUES(1);
 INSERT INTO reviewer(id) VALUES(2);
