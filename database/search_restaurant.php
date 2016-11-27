@@ -1,7 +1,6 @@
 <?php
     if(isset($_GET['search_field'])){
-        include_once('database/connection.php');
-        $db = new PDO('sqlite:database/database.db');
+        $db = new PDO('sqlite:database.db');
         $search_field = $_GET['search_field'];
 
         $query = "SELECT * FROM restaurant WHERE name LIKE '%$search_field%'";

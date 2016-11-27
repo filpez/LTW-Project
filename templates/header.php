@@ -16,9 +16,12 @@
             <ul>
                 <li><a href="">Menu Option 1 (Ideas?)</a></li>
                 <li><a href="">Menu Option 2 (Ideas?)</a></li>
+                <li>
+                	<form method="get" action="database/search_restaurant.php">
+                		<input type="text" id="search_field" name="search_field" value="Search for restaurant...">
+                		<input type="submit" value="Search">
+           			</form>
+           		</li>
+           		<li><a href="">Advanced Search</a></li>
             </ul>
-            <form method="get" action="search.php">
-                <label>Search: <input type="text" name="search_field"></label>
-                <input type="submit" value="Send">
-            </form>
         </div>
