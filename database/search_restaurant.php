@@ -20,9 +20,8 @@
 
 		if(count($result) == 0)
 			echo '<h2>No results found</h2>';
-		/*else if (count($result) == 1)
-			header( 'Location: /restaurant.php?id='.$result[0]['id'] );*/
-
+		else if (count($result) == 1)
+			echo '/restaurant.php?id='.$result[0]['id'] ;
 		else
         	foreach($result as $restaurant) { ?>
 				<div id="content">
