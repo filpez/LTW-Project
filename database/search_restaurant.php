@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET['search_field'])){
-        include_once('database/connection.php');
+        include_once('connection.php');
         $search_field = $_GET['search_field'];
 
         $query = "SELECT * FROM restaurant WHERE name LIKE '%$search_field%'";
