@@ -1,3 +1,7 @@
+<?php
+
+    $owner_options = array('Add a restaurant' => 'addRestaurant.php', 'Manage Restaurants' => '404.php');
+?>
     <body>
         <div id="header">
        		<a href="home.php">
@@ -14,14 +18,22 @@
 		</div>
         <div id="menu">
             <ul>
-                <li><a href="">Menu Option 1 (Ideas?)</a></li>
-                <li><a href="">Menu Option 2 (Ideas?)</a></li>
+                <li><a href="register.php">Register</a></li>
+                <?php if(isset($userType)){ ?>
+                    <li><a href="404.php">Edit my profile</a></li>
+                <?php } ?>
+                
+                <?php if(isset($userType) && $userType=='owner'){ foreach ($owner_options as $title => $link) { ?>
+                    <li><a href=<?=$link?>><?=$title?></a></li>
+                <?php }} ?>
+                
                 <li>
                 	<form method="get" action="search.php">
                 		<input type="text" id="search_field" name="searchfor" value="Search for restaurant...">
                 		<input type="submit" id="search_button" value="Search">
            			</form>
            		</li>
-           		<li><a href="search.php">Advanced Search</a></li>
+           		
+                <li><a href="search.php">Advanced Search</a></li>
             </ul>
         </div>

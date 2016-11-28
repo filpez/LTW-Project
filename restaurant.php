@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Restaurant</title>
+        <title><?=$restaurant['name']?></title>
         <meta charset="utf-8"/>
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
