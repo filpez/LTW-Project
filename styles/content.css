@@ -1,4 +1,4 @@
-﻿/*
+/*
 ------------------  Content ----------------------
 */
 
@@ -6,42 +6,42 @@
 	margin: 10px 10px;
 }
 
-#content img{
+.restaurant img{
 	margin: 10px 10px;
 	float: left;
 }
 
-#content p{
+.restaurant p{
 	padding: 3px;
 }
 
-#content .points{
+.restaurant .points{
 	font-size: 1.2em;
 	font-weight: bolder;
 	font-style: italic;
 }
 
-#content .place{
+.restaurant .place{
 	font-size: 1.1em;
 }
 
-#content .description{
+.restaurant .description{
 	font-size: 1em;
 }
 
-#content h3{
+.restaurant h3{
 	font-family: "Arial";
 	width: 100%;
 	font-size: 2em;
 	font-weight: bolder;
 }
 
-#content p{
+.restaurant p{
 	margin: 0px 10px;
 }
 
 
-#content ul{
+.restaurant ul{
 	overflow: hidden;
 	clear:left;
 	margin: 0 10px;
@@ -49,7 +49,7 @@
 	border-bottom: 1px solid black;
 }
 
-#content ul a{
+.restaurant ul a{
 	float:left;
 	display: inline-block;
 	text-decoration: none;

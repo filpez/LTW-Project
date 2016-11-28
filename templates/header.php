@@ -19,7 +19,7 @@
                 <li>
                 	<form method="get" action="database/search_restaurant.php">
                 		<input type="text" id="search_field" name="search_field" value="Search for restaurant...">
-                		<input type="submit" value="Search">
+                		<input type="submit" id="search_button" value="Search">
            			</form>
            		</li>
            		<li><a href="search.php">Advanced Search</a></li>
