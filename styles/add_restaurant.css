@@ -1,0 +1,32 @@
+/*
+------------------  Add Restaurant Form ----------------------
+*/
+#add_restaurant{
+	text-align: center;
+	width: 80%;
+	min-width: 600px;
+	font-size: 1.2em;
+	font-weight: bold;
+ 	margin: auto auto;
+}
+
+#add_restaurant label{
+	display: block;
+	vertical-align: middle;
+}
+
+#add_restaurant input{
+	text-align: center;
+    display: inline-block;
+	width: 100%;
+	margin: 10PX;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 2px solid rgb(86, 76, 66);
+	border-radius:90px;
+}
+
+#add_restaurant img{
+	display: inline-block;
+	margin: 10px;
+}
