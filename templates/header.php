@@ -10,10 +10,12 @@
             </a>
 		</div>
 		<div id="login">
-            <form>
+            <form method="post" action="<?=htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             	<h3>Login</h3>
                 <label>Username: <input type="text"></label>
                 <label>Password: <input type="password"></label>
+                <input type="submit" value="Login"></label>
+
             </form>
 		</div>
         <div id="menu">
