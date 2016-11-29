@@ -3,11 +3,14 @@
 */
 #register{
 	text-align: center;
-	width: 80%;
 	min-width: 600px;
 	font-size: 1.2em;
 	font-weight: bold;
- 	margin: auto auto;
+ 	width: 90%;
+	background-color: #fff6d5;
+	padding: 10px 0px;
+ 	margin: 10px auto;
+	border-radius:30px;
 }
 
 #register label{
@@ -17,9 +20,9 @@
 
 #register input{
 	text-align: center;
-    display: inline-block;
-	width: 100%;
-	margin: 10PX;
+    display: block;
+	width: 90%;
+	margin: 10PX auto;
 	padding: 10px;
 	box-sizing: border-box;
 	border: 2px solid rgb(86, 76, 66);

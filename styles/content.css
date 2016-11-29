@@ -3,11 +3,19 @@
 */
 
 .restaurant{
-	margin: 10px 10px;
+	width: 90%;
+	background-color: #fff6d5;
+	min-width: 600px;
+	min-height: 250px;
+	padding: 20px 0px;
+ 	margin: 10px auto;
+	border-radius:30px;
 }
 
 .restaurant img{
-	margin: 10px 10px;
+	border: 2px solid rgb(86, 76, 66);
+	border-radius:30px;
+	margin: 20px 20px;
 	float: left;
 }
 
@@ -30,6 +38,7 @@
 }
 
 .restaurant h3{
+	padding: 0 25px;
 	font-family: "Arial";
 	width: 100%;
 	font-size: 2em;
@@ -46,7 +55,6 @@
 	clear:left;
 	margin: 0 10px;
 	padding: 10px 0;
-	border-bottom: 1px solid black;
 }
 
 .restaurant ul a{

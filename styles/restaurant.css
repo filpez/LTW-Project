@@ -39,6 +39,22 @@
 	font-weight: normal;
 }
 
+.comment .berry{
+	border: none;
+	border-radius: 0;
+	height: 24px;
+	width: 24px;
+	margin: 10px 0px;
+}
+
+.comment .berry:first-of-type{
+	margin-left: 15px;
+}
+
+.comment .berry:last-of-type{
+	margin-right: 5px;
+}
+
 .comment p{
 	
 }

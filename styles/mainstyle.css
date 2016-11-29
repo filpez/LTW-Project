@@ -9,7 +9,7 @@ body{
 	min-width: 800px;
 	min-height: 100%;
    	margin: 0 auto;
-	background-color: rgba(255,246,213,1);
+	background-color: rgb(81, 140, 172);
 	border-left: 3px solid rgba(60,114,160,1);
 	border-right: 3px solid rgba(60,114,160,1);
 }
@@ -100,8 +100,14 @@ body{
 }
 
 
+/*
+------------------  Menu ----------------------
+*/
+
 #footer{
-	clear:left;
+	background-color:#564c42;
+	color: white;
+	clear: left;
 	padding: 10px;
 }
 
