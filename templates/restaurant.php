@@ -11,7 +11,7 @@
 	<h3 id="comments_title">Comments:</h3>
 	<?php foreach ($reviews as $review) { ?>
 		<div class="comment">
-		<h3><?=$review['points'].' of 10'?><span class="name"> by <?=getUsername($review['reviewer_id'])?></span></h3>
+		<h3><?=$review['points'].' of 10'?><span class="name"> por <?=getUsername($review['reviewer_id'])?></span></h3>
 		<p> <?=$review['comment']?> </p>
 		</div>
 	<?php } ?>
