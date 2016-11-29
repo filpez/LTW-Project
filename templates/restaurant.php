@@ -6,12 +6,15 @@
 	<p class="description"> <?=$restaurant['description']?> </p>
 	<p class="opening"> Aberto a partir das <?=$restaurant['opening_hours']?> </p>
 	<p class="closing"> Fecha às <?=$restaurant['closing_hours']?> </p>
-	
-	<div class="comments">
+</div>	
+<div class="comments">
+	<h3 id="comments_title">Comments:</h3>
 	<?php foreach ($reviews as $review) { ?>
-		<p> <?=getUsername($review['reviewer_id']).' - '.$review['points'].' of 10'?> </p>
+		<div class="comment">
+		<h3><?=$review['points'].' of 10'?><span class="name"> by <?=getUsername($review['reviewer_id'])?></span></h3>
 		<p> <?=$review['comment']?> </p>
+		</div>
 	<?php } ?>
-	</div>
 </div>
+
 

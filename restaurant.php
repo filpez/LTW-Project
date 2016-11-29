@@ -15,6 +15,7 @@
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
         <link href="styles/content.css" rel="stylesheet">
+        <link href="styles/restaurant.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
         <script src="scripts/search_simple.js"></script>
