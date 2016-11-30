@@ -31,7 +31,8 @@
  	margin: 4px auto;
  	border: 2px solid rgb(86, 76, 66);
 	border-radius:30px;
-	background: #fff6d5;		
+	background: #fff6d5;
+	overflow: hidden		
 }
 
 .comment .name{
@@ -40,12 +41,15 @@
 }
 
 .comment .berry{
+    width: auto; 
+    max-height:  1.5em;
+    padding: 0 0;
 	border: none;
 	border-radius: 0;
-	height: 24px;
-	width: 24px;
-	margin: 10px 0px;
+	margin: 10px  0;
+	//height: 24px;
 }
+
 
 .comment .berry:first-of-type{
 	margin-left: 15px;
