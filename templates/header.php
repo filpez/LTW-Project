@@ -1,5 +1,5 @@
 <?php
-
+    
     $owner_options = array('Add a restaurant' => 'addRestaurant.php', 'Manage Restaurants' => '404.php');
 ?>
     <body>
@@ -10,24 +10,24 @@
             </a>
 		</div>
 		<div id="login">
-            <form method="post" action="<?=htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form method="post" action="<?=htmlspecialchars('action_login.php');?>">
             	<h3>Login</h3>
-                <label>Username: <input type="text"></label>
-                <label>Password: <input type="password"></label>
+                <label>Username: <input type="text" name="username"></label>
+                <label>Password: <input type="password" name="password"></label>
                 <input type="submit" value="Login"></label>
 
             </form>
 		</div>
         <div id="menu">
             <ul>
-                <li><a href="register.php">Register</a></li>
-                <?php if(isset($userType)){ ?>
+                <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){ ?>
                     <li><a href="404.php">Edit my profile</a></li>
-                <?php } ?>
+                    <li><a href="404.php">Logout</a></li>
+                    <?php if(isOwner($_SESSION['username'])){ foreach ($owner_options as $title => $link) { ?>
+                        <li><a href=<?=$link?>><?=$title?></a></li>
+                    <?php }}} else?>
+                    <li><a href="register.php">Register</a></li>
                 
-                <?php if(isset($userType) && $userType=='owner'){ foreach ($owner_options as $title => $link) { ?>
-                    <li><a href=<?=$link?>><?=$title?></a></li>
-                <?php }} ?>
                 
                 <li>
                 	<form method="get" action="search.php">

@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once('database/connection.php');
+    include_once('database/user.php');
     include_once('database/restaurants.php');
     
     $restaurant=getRestaurant($_GET['id']);

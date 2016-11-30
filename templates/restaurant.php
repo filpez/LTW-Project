@@ -14,7 +14,7 @@
 			<?php 
 				$berry_type = rand(1,4);
 				for ($i = 1; $i <= $review['points']; $i++) {
-					echo '<img class="berry" src="../resources/berry'.$berry_type.'.png" alt="berry">';
+					echo '<img class="berry" src="resources/berry'.$berry_type.'.png" alt="berry">';
     				//echo '<img src="../resources/berry'.$berry_type.'.png alt="berry">';
 				} ?>
 				<h3><span class="name"> por <?=getUsername($review['reviewer_id'])?></span></h3>
@@ -23,5 +23,5 @@
 		<?php } ?>
 	</div>
 	<?php } ?>
-</div>	
+</div>
 

@@ -2,7 +2,7 @@
 
 CREATE TABLE user  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	username VARCHAR not NULL,
+	username VARCHAR not NULL UNIQUE,
 	name VARCHAR not NULL,
 	password VARCHAR not NULL,
 	email VARCHAR not NULL,
