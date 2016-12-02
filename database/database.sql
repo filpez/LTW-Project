@@ -5,7 +5,7 @@ CREATE TABLE user  (
 	username VARCHAR not NULL UNIQUE,
 	name VARCHAR not NULL,
 	password VARCHAR not NULL,
-	email VARCHAR not NULL,
+	email VARCHAR not NULL UNIQUE,
 	date_created DATE not NULL
 );
 
@@ -25,6 +25,11 @@ CREATE TABLE restaurant  (
 	description VARCHAR,
 	opening_hours TIME,
 	closing_hours TIME
+);
+
+CREATE TABLE restaurant_image (
+	restaurant_id INTEGER REFERENCES restaurant,
+	img_path VARCHAR UNIQUE
 );
 
 CREATE TABLE review  (
