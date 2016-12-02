@@ -1,6 +1,7 @@
 <?php
     session_start();
 	include_once('database/connection.php');
+    include_once('database/user.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
         <link href="styles/add_restaurant.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
+        <script src="scripts/search_simple.js"></script>
     </head>
     <?php
 		include('templates/header.php');
