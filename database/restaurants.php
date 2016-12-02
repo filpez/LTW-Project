@@ -41,6 +41,16 @@
 		return $reviews;
 	}
 
+	function getImagesForRestaurant($restaurantID){
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM restaurant_image WHERE restaurant_id=:restaurantID');
+		$stmt->bindParam(':restaurantID',$restaurantID,PDO::PARAM_INT);
+		$stmt->execute();
+		$images=$stmt->fetchAll();
+
+		return $images;
+	}
+
 	function getUsername($id){
 		global $db;
         $stmt = $db->prepare('SELECT * FROM user WHERE id=:id'); //get sum of all user's ratings

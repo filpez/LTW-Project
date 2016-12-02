@@ -33,6 +33,44 @@ function addNewUser(){
     $stmt->execute(); 
 }
 
+function addImage(){
+	global $name;
+	$path = "userPhotos/";
+
+	//Check if there's a file
+	$imgname = $_FILES['photo']['name'];
+	if(!$imgname){
+		return -1;
+	}
+		
+	//check size
+	$size = $_FILES['photo']['size'];
+	if ($size > 1024*1024){
+		echo "Image file size max 1 MB";
+		return -2;
+	}
+
+			
+	//Check if File is an Image
+	$tmp = $_FILES['photo']['tmp_name'];
+	$check = getimagesize($tmp);
+	if($check === false) {
+		echo "File is not an image.";
+		return -2;
+	}
+	
+	//Save image
+	list($txt, $ext) = explode(".", $imgname);
+	$actual_image_name = $name.".".$ext;
+	if(move_uploaded_file($tmp, $path.$actual_image_name)){
+		echo "<img src='uploads/".$actual_image_name."' class='preview'>";
+		return $actual_image_name;
+	}
+	else
+		echo "failed";
+		return -2;
+}
+
 function checkParameters() {
     global $db;
     global $username;

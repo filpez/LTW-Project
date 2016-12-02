@@ -2,6 +2,7 @@
 $db = new PDO('sqlite:database.db');
 $name = $_POST['name'];
 $local = $_POST['local'];
+$description  = $_POST['description'];
 $opening = $_POST['opening'];
 $closing = $_POST['closing'];
 $code = $_POST['code'];
@@ -10,11 +11,22 @@ function addNewRestaurant(){
     global $db;
     global $name;
     global $local;
+    global $description;
     global $opening;
     global $closing;
-    addImage();
+    
+    $stmt = $db->prepare("INSERT INTO restaurant(name, local, description, opening_hours, closing_hours) VALUES('$name','$local', '$description','$opening', '$closing')");
+    $stmt->execute();
 
-    $stmt = $db->prepare("INSERT INTO restaurant(name, local, description, opening_hours, closing_hours, date_created) VALUES('$name', '$local', '$opening', '$closing', datetime('now'))");
+	//$id = sqlite_last_insert_rowid ($db);
+	$id = $db->lastInsertId();
+	echo $id;
+	$path = addImage();
+	$noImagePath = "../../resources/snorlax.jpg";
+    if ($path < 0)
+    	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$noImagePath')");
+    else
+    	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$path')");
     $stmt->execute();
 }
 

@@ -29,7 +29,7 @@ CREATE TABLE restaurant  (
 
 CREATE TABLE restaurant_image (
 	restaurant_id INTEGER REFERENCES restaurant,
-	img_path VARCHAR UNIQUE
+	img_path VARCHAR
 );
 
 CREATE TABLE review  (
@@ -57,9 +57,13 @@ INSERT INTO owner(id) VALUES(1);
 INSERT INTO reviewer(id) VALUES(2);
 INSERT INTO reviewer(id) VALUES(3);
 
-INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'Pidgey na Brasa','Pallet Town','Um belo sitio, onde pode comer todo o tipo de Pidgey a um otimo preço.','19:00','00:00');
+INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'Pidgey na Brasa','Pallet Town','Um belo sitio, onde pode comer todo o tipo de Pidgey a um otimo preco.','19:00','00:00');
 INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'Krusty Krabby','Celadon City','O melhor Krabby do Mercado!!!','10:00','22:00');
-INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'McGolduck''s','Safari Zone','Não é McDonald''s','12:00','01:00');
+INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'McGolduck''s','Safari Zone','Nao e McDonald''s','12:00','01:00');
 
 INSERT INTO review(reviewer_id,restaurant_id,points) VALUES(2,1,5);
 INSERT INTO review(reviewer_id,restaurant_id,points) VALUES(3,1,10);
+
+INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'../../resources/snorlax.jpg');
+INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(2,'../../resources/snorlax.jpg');
+INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(3,'../../resources/snorlax.jpg');

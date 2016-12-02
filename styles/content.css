@@ -15,6 +15,7 @@
 .restaurant img{
 	border: 2px solid rgb(86, 76, 66);
 	border-radius:30px;
+	max-height: 200px;
 	margin: 20px 20px;
 	float: left;
 }
