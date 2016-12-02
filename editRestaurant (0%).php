@@ -1,10 +1,6 @@
 <?php
     session_start();
 	include_once('database/connection.php');
-    include_once('database/user.php');
-    include_once('database/restaurants.php');
-	
-	$restaurant_page = FALSE;
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +10,13 @@
         <meta charset="utf-8"/>
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
-        <link href="styles/content.css" rel="stylesheet">
-       	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link href="styles/add_restaurant.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
-        <script src="scripts/search_simple.js"></script>
     </head>
-	<?php
+    <?php
 		include('templates/header.php');
-		include('templates/list_restaurants.php');
+		include('templates/add_restaurant.php');
 		include('templates/footer.php');
 	?>
 </html>

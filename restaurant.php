@@ -7,6 +7,8 @@
     $restaurant=getRestaurant($_GET['id']);
 
     $reviews=getReviewsForRestaurant($restaurant['id']);
+	
+	$restaurant_page = TRUE;
 ?>
 <!DOCTYPE html>
 <html>

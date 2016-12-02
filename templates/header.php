@@ -34,6 +34,9 @@
                     <?php }}} else { ?>
                         <li><a href="register.php">Register</a></li>
                     <?php } ?>
+					<?php if($restaurant_page && isOwner($_SESSION['username'])) {
+						echo "<li><a href='404.php'> Edit Restaurant</li>";
+					} ?>
                 
                 
                 <li>
