@@ -5,13 +5,18 @@
     <body>
         <div id="header">
        		<a href="home.php">
+            <?php
+                if(isset($POST['message']))
+                    echo $POST['message'];
+            ?>
             	<h1>My Restaurant Review Site</h1>
             	<h2>which I will call "Snorlax's Diary" for now...</h2>
             </a>
 		</div>
 		<div id="login">
             <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){ ?>
-                <h4><?php echo 'Welcome '.$_SESSION['username']?></h4>
+                <li><a href="my_page.php"><?php echo 'Welcome '.$_SESSION['username']?></a></li>
+                <li><a href="action_logout.php">Logout</a></li>
             <?php } else { ?>
                 <form method="post" action="<?=htmlspecialchars('action_login.php');?>">
             	   <h3>Login</h3>
@@ -23,10 +28,8 @@
 		</div>
         <div id="menu">
             <ul>
-                <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){ ?>
-                    <li><a href="404.php">Edit my profile</a></li>
-                    <li><a href="action_logout.php">Logout</a></li>
-                    <?php if(isOwner($_SESSION['username'])){ foreach ($owner_options as $title => $link) { ?>
+                <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){
+                    if(isOwner($_SESSION['username'])){ foreach ($owner_options as $title => $link) { ?>
                         <li><a href=<?=$link?>><?=$title?></a></li>
                     <?php }}} else { ?>
                         <li><a href="register.php">Register</a></li>
