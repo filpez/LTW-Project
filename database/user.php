@@ -26,7 +26,6 @@
 
 	function login($username, $pass){
 	global $db;
-	echo $username;
 	if(!isset($username))
 		return false;
         $stmt = $db->prepare('SELECT * FROM user WHERE username=:username AND password=:pass');
@@ -35,7 +34,7 @@
         $stmt->execute();
         $user=$stmt->fetch();
 		
-	if(isset($user)) $_SESSION['username']=$user['name'];
+	if(isset($user)) $_SESSION['username']=$username;
     return true;
 	}
 
