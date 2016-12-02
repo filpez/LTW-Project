@@ -2,6 +2,8 @@
     session_start();
 	include_once('database/connection.php');
     include_once('database/user.php');
+	
+	$restaurant_page = FALSE;
 ?>
 
 <!DOCTYPE html>
