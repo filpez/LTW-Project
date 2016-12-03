@@ -22,6 +22,7 @@
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
         <script src="scripts/search_simple.js"></script>
+        <script src="scripts/image_gallery.js"></script>
     </head>
 	<?php
 		include('templates/header.php');
