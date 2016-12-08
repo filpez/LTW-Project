@@ -15,7 +15,7 @@
 			$images = getImagesForRestaurant($restaurant['id']);
 			foreach ($images as $image){
 				$image_path = $image["img_path"];
-				echo '<img class="photo" src="../database/uploads/'.$image_path.'" alt="300x200">';
+				echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">';
 			}
 		?>
 	</div>

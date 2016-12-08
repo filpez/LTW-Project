@@ -10,7 +10,7 @@
 					$images = getImagesForRestaurant($restaurant['id']);
 					$image_n = rand(0,count($images)-1);
 					$image_path = $images[$image_n]["img_path"];
-					echo '<img class="photo" src="../database/uploads/'.$image_path.'" alt="300x200">'
+					echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">'
 			?>
 			<p class="points">Pontos: <?=getRestaurantScore($restaurant['id'])?> em 10</p>
 			<p class="place"> <?=$restaurant['local']?> </p>

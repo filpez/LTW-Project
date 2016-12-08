@@ -29,15 +29,15 @@
         <div id="menu">
             <ul>
                 <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){
-                    if(isOwner($_SESSION['username'])){ foreach ($owner_options as $title => $link) { ?>
-                        <li><a href=<?=$link?>><?=$title?></a></li>
-                    <?php }}} else { ?>
-                        <li><a href="register.php">Register</a></li>
-                    <?php } ?>
-					<?php if($restaurant_page && isOwner($_SESSION['username'])) { ?>
-						<li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> > Edit Restaurant</li>;
-					<?php } ?>
-                
+                    if(isOwner($_SESSION['username'])){
+                        foreach ($owner_options as $title => $link) { ?>
+                            <li><a href=<?=$link?>><?=$title?></a></li>
+                        <?php }
+                        if($restaurant_page) { ?>
+				            <li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> >Edit Restaurant</li>;
+                <?php }}} else { ?> <!-- if not user -->
+                    <li><a href="register.php">Register</a></li>
+				<?php } ?>
                 
                 <li>
                 	<form method="get" action="search.php">
