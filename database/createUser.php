@@ -18,7 +18,6 @@ function addNewUser(){
     global $email;
 
     $hashed_password = sha1($password);
-    echo $hashed_password;
 
     $stmt = $db->prepare("INSERT INTO user(username, name, password, email, date_created) VALUES('$username', '$name', '$hashed_password', '$email', datetime('now'))");
     $stmt->execute(); 
@@ -30,7 +29,7 @@ function addNewUser(){
         $stmt = $db->prepare("INSERT INTO owner(id) VALUES('$id')");
     else
         $stmt = $db->prepare("INSERT INTO reviewer(id) VALUES('$id')");
-    $stmt->execute(); 
+    $stmt->execute();
 }
 
 function addImage(){

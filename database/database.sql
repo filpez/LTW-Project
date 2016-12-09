@@ -49,9 +49,8 @@ CREATE TABLE comment  (
 
 /* INSERTS */
 
-INSERT INTO user(username, name, password, email, date_created) VALUES('Admin', 'AdminName','AdminPassword', 'AdminEmail', 'TODAY');
-INSERT INTO user(username, name, password, email, date_created) VALUES('Taaa','TaaaName','nogoodpass','aMail','TODAY');
-INSERT INTO user(username, name, password, email, date_created) VALUES('Xaaa','Xaaaaaaa','nogoodpass2','a2ndMail','TODAY');
+INSERT INTO user(username, name, password, email, date_created) VALUES('Admin1', 'AdminName','d882b8721a224d38ebb54559e6b54e5df3a1bc6d', 'admin@admin.adm', '2016-12-09 09:09:40'); /*pass=AdminPassword*/
+INSERT INTO user(username, name, password, email, date_created) VALUES('user01','foo','5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8','taa@mail.com', '2016-12-09 09:17:01'); /*password*/
 
 INSERT INTO owner(id) VALUES(1);
 INSERT INTO reviewer(id) VALUES(2);
