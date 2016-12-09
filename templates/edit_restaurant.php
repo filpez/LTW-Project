@@ -1,13 +1,29 @@
-        <div id="edit_restaurant">
-			<form action="database/editRestaurant.php" method="post"  enctype="multipart/form-data" >
-				<input type="hidden" name="res_id" value="<?=$restaurant?>" />
-				<label>NAME<input type="text" name="name"></label>
-				<label>LOCAL<input type="text" name="local"></label>
-				<label>IMAGE<input type="file" id="photo" name="photo"></label>
-				<label>DESCRIPTION<input type="text" name="description"></label>
-				<label>OPENING HOURS<input type="time" name="opening"></label>
-				<label>CLOSING HOURS<input type="time" name="closing"></label><img src="resources/secure.png" alt="Secure Code" width="60" height="40"> 
-				<label>ARE YOU AN HUMAN? INSERT THE NUMBER ABOVE TO PROVE IT!<input type="text" name="code"></label>
-				<input type="submit" value="Send">
-			</form>
-		</div>
+<div id="manage_restaurant">
+	<form action="database/editRestaurant.php" enctype="multipart/form-data" method="post">
+		<label>NAME<input name="name" type="text" value="<?=$restaurant['name']?>" ></label>
+		<label>LOCAL<input name="local" type="text" value="<?=$restaurant['local']?>"></label>
+		<label>ADD IMAGE<input id="photo" name="photo" type="file"></label>
+
+		<label>DESCRIPTION<textarea name="description" rows="7" cols="50"><?=$restaurant['description']?></textarea >
+		<label>OPENING HOURS<input name="opening" type="time" value="<?=$restaurant['opening_hours']?>"></label>
+		<label>CLOSING HOURS<input name="closing" type="time" value="<?=$restaurant['closing_hours']?>"></label>
+		<input type="submit" value="Save">
+	</form>
+	
+	<form action="database/addPhoto.php" enctype="multipart/form-data" method="post">
+		<label>ADD IMAGE<input id="photo" name="photo" type="file"></label>
+		<input type="submit" value="Add">
+	</form>
+
+	<form action="database/addPhoto.php" enctype="multipart/form-data" method="post">
+		<label>DELETE IMAGE</label>
+		<?php 
+			$images = getImagesForRestaurant($restaurant['id']);
+			foreach ($images as $image){
+				$image_path = $image["img_path"];
+				echo "<p>".$image_path."</p>";
+			}
+		?>
+	</form>
+
+</div>

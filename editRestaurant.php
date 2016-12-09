@@ -4,7 +4,7 @@
     include_once('database/restaurants.php');
     include_once('database/user.php');
 	
-	$restaurant = $_GET['id'];
+	$restaurant=getRestaurant($_GET['id']);
 	
 	$restaurant_page = FALSE;
 ?>
@@ -16,7 +16,7 @@
         <meta charset="utf-8"/>
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
-        <link href="styles/edit_restaurant.css" rel="stylesheet">
+        <link href="styles/manage_restaurant.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
     </head>
