@@ -5,10 +5,6 @@
     <body>
         <div id="header">
        		<a href="home.php">
-            <?php
-                if(isset($POST['message']))
-                    echo $POST['message'];
-            ?>
             	<h1>My Restaurant Review Site</h1>
             	<h2>which I will call "Snorlax's Diary" for now...</h2>
             </a>
@@ -25,6 +21,7 @@
                     <input type="submit" value="Login"></label>
                 </form>
             <?php } ?>
+            <?php if(isset($_POST['message'])) echo '<h4>'.$_POST['message'].'</h4>'?>
 		</div>
         <div id="menu">
             <ul>

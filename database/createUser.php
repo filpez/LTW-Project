@@ -1,13 +1,14 @@
 <?php
-include_once('connection.php');
-$username = $_POST['username'];
-$name = $_POST['name'];
-$password = $_POST['password'];
-$c_password = $_POST['c_password'];
-$email = $_POST['email'];
-$c_email = $_POST['c_email'];
-$type = $_POST['type'];
-$code = $_POST['code'];
+    include_once('../misc/utilities.php');
+    include_once('connection.php');
+    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+    $c_password = $_POST['c_password'];
+    $email = $_POST['email'];
+    $c_email = $_POST['c_email'];
+    $type = $_POST['type'];
+    $code = $_POST['code'];
 
 function addNewUser(){
     global $db;
@@ -114,7 +115,7 @@ function checkParameters() {
 }
 
 if(checkParameters())
-    echo checkParameters();
+    showHeaderMessage(checkParameters());
 
 else{
     addNewUser();
