@@ -22,7 +22,15 @@
     </head>
     <?php
 		include('templates/header.php');
-		include('templates/edit_restaurant.php');
-		include('templates/footer.php');
+
+        if(!isset($_SESSION['username']) || !usernameExists($_SESSION['username']))
+            echo "<p>Page meant only for users who are logged in...</p>";
+        else if(!$restaurant)
+            echo "<p>Restaurant does not exist...</p>";
+        else if(userHasRestaurant($_SESSION['username'],$restaurant))
+                include('templates/edit_restaurant.php');
+        else echo "<p>Page meant only for the owner of this restaurant...</p>";
+		
+        include('templates/footer.php');
 	?>
 </html>

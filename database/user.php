@@ -1,42 +1,41 @@
 <?php
 
-	function usernameExists($username){
+    include_once('database/restaurants.php');
+
+    function getUser($username){
         global $db;
         $stmt = $db->prepare('SELECT * FROM user WHERE username=:username');
         $stmt->bindParam(':username',$username,PDO::PARAM_STR);
         $stmt->execute();
         $user=$stmt->fetch();
-        
-        if($user)
+        return $user;
+    }
+
+	function usernameExists($username){
+        if(getUser($username))
         	return true;
         else return false;
 	}
 
 	function isOwner($username){
-	global $db;
-        $stmt = $db->prepare('SELECT * FROM user INNER JOIN owner ON owner.id = user.id WHERE user.username=:username');
-        $stmt->bindParam(':username',$username,PDO::PARAM_STR);
-        $stmt->execute();
-        $user=$stmt->fetch();
+	$restaurants=getRestaurantsFromUser($username);
         
-        if($user)
-        	return true;
-        else return false;
+    if(count($restaurants) > 0)
+       	return true;
+    else return false;
 	}
 
 	function login($username, $pass){
-	global $db;
+    if(!isset($username))
+        return false;
+
     $hashed_password = sha1($pass);
-	if(!isset($username))
-		return false;
-    $stmt = $db->prepare('SELECT * FROM user WHERE username=:username');
-    $stmt->bindParam(':username',$username,PDO::PARAM_STR);
-    $stmt->execute();
-    $user=$stmt->fetch();
+    $user=getUser($username);
+
     if($hashed_password != $user['password'])
         return false;
 		
-	if(isset($user)) $_SESSION['username']=$username;
+	$_SESSION['username']=$username;
     return true;
 	}
 
