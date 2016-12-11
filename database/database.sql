@@ -9,17 +9,10 @@ CREATE TABLE user  (
 	date_created DATE not NULL
 );
 
-CREATE TABLE owner  (
-	id INTEGER PRIMARY KEY REFERENCES user
-);
-
-CREATE TABLE reviewer  (
-	id INTEGER PRIMARY KEY REFERENCES user
-);
 
 CREATE TABLE restaurant  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	owner_id INTEGER REFERENCES owner,
+	owner_id INTEGER REFERENCES user,
 	name VARCHAR not NULL,
 	local VARCHAR not NULL,
 	description VARCHAR,
@@ -34,7 +27,7 @@ CREATE TABLE restaurant_image (
 
 CREATE TABLE review  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	reviewer_id INTEGER REFERENCES reviewer,
+	reviewer_id INTEGER REFERENCES user,
 	restaurant_id INTEGER REFERENCES restaurant,
 	points INTEGER not NULL,
 	comment VARCHAR
@@ -42,8 +35,8 @@ CREATE TABLE review  (
 
 CREATE TABLE comment  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	owner_id INTEGER REFERENCES owner,
-	review_id INTEGER REFERENCES review,
+	owner_id INTEGER REFERENCES user,
+	review_id INTEGER REFERENCES user,
 	comment VARCHAR
 );
 
@@ -66,3 +59,5 @@ INSERT INTO review(reviewer_id,restaurant_id,points) VALUES(3,1,10);
 INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'../../resources/snorlax.jpg');
 INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(2,'../../resources/snorlax.jpg');
 INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(3,'../../resources/snorlax.jpg');
+INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'1480673678AAAAAAAA.jpg');
+INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'../../resources/secure.png');

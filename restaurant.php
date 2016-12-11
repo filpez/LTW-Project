@@ -4,7 +4,10 @@
     include_once('database/user.php');
     include_once('database/restaurants.php');
     
-    $restaurant=getRestaurant($_GET['id']);
+    if(isset($_GET['id']) && is_numeric($_GET['id']))
+        $restaurant=getRestaurant($_GET['id']);
+    else $restaurant=0;
+
     $reviews=getReviewsForRestaurant($restaurant['id']);
 	$images = getImagesForRestaurant($restaurant['id']);
 	$restaurant_page = TRUE;

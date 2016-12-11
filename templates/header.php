@@ -30,7 +30,7 @@
                         foreach ($owner_options as $title => $link) { ?>
                             <li><a href=<?=$link?>><?=$title?></a></li>
                         <?php }
-                        if($restaurant_page) { ?>
+                        if(isset($restaurant_page) && $restaurant_page) { ?>
 				            <li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> >Edit Restaurant</li>;
                 <?php }}} else { ?> <!-- if not user -->
                     <li><a href="register.php">Register</a></li>
