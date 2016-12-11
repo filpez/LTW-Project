@@ -8,9 +8,14 @@
 			<h3 class="restaurant_name"> <?=$restaurant['name']?> </h3>
 			<?php 
 					$images = getImagesForRestaurant($restaurant['id']);
-					$image_n = rand(0,count($images)-1);
-					$image_path = $images[$image_n]["img_path"];
-					echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">'
+					if (count($images) > 0){
+						$image_n = rand(0,count($images)-1);
+						$image_path = $images[$image_n]["img_path"];
+						echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">';
+					}
+					else
+						echo '<img class="photo" src="resources/snorlax.jpg" alt="300x200">';
+
 			?>
 			<p class="points">Pontos: <?=getRestaurantScore($restaurant['id'])?> em 10</p>
 			<p class="place"> <?=$restaurant['local']?> </p>

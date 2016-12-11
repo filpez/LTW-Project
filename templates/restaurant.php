@@ -10,9 +10,9 @@
 		<p class="opening"> Aberto a partir das <?=$restaurant['opening_hours']?> </p>
 		<p class="closing"> Fecha às <?=$restaurant['closing_hours']?> </p>
 	</div>
+	<?php if (count($images)) { ?>
 	<div id="image_gallery">
 		<?php 
-			$images = getImagesForRestaurant($restaurant['id']);
 			foreach ($images as $image){
 				$image_path = $image["img_path"];
 				echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">';
@@ -26,7 +26,7 @@
 		<span class="right_arrow">&#062</span>
   		<img src="" class="modal_image">
 	</div>
-
+	<?php } ?>
 	<?php if (count($reviews)) { ?>
 	<div class="comments">
 		<h3 id="comments_title">Comments:</h3>

@@ -5,8 +5,9 @@ $local = $_POST['local'];
 $description = $_POST['description'];
 $opening = $_POST['opening'];
 $closing = $_POST['closing'];
-$code = $_POST['code'];
 $restaurant = $_POST['res_id'];
+
+echo $opening;
 
 function editRestaurant() {
     global $db;
@@ -35,26 +36,16 @@ function editRestaurant() {
         $stmt->execute();
     }
     
-/*     if (!(is_null($opening))) {
-        $stmt = $db->prepare("UPDATE restaurant SET opening = '$opening' WHERE id = '$restaurant'");
+    if (!(is_null($opening))) {
+        $stmt = $db->prepare("UPDATE restaurant SET opening_hours = '$opening' WHERE id = '$restaurant'");
         $stmt->execute();
     }
     
     if (!(is_null($closing))) {
-        $stmt = $db->prepare("UPDATE restaurant SET closing = '$closing' WHERE id = '$restaurant'");
-        $stmt->execute();
-    } */
-    
-    //$id = sqlite_last_insert_rowid ($db);
-    $id = $db->lastInsertId();
-    echo $id;
-    $path = addImage();
-    /* $noImagePath = "../../resources/snorlax.jpg"; */
-    if (!($path < 0)) {
-        /* $stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$noImagePath')"); */
-        $stmt = $db->prepare("UPDATE restaurant_image SET restaurant_id = '$id', img_path = '$path' WHERE id = '$restaurant'");
+        $stmt = $db->prepare("UPDATE restaurant SET closing_hours = '$closing' WHERE id = '$restaurant'");
         $stmt->execute();
     }
+    
 }
 
 function checkParameters() {
@@ -63,23 +54,20 @@ function checkParameters() {
     global $local;
     global $opening;
     global $closing;
-    global $code;
+    global $restaurant;
     
-    $stmt = $db->prepare("SELECT * FROM restaurant WHERE name='$name'");
+    $stmt = $db->prepare("SELECT * FROM restaurant WHERE name='$name' AND NOT id ='$restaurant'");
     $stmt->execute();
     $result = $stmt->fetchAll();
     if (count($result) != 0)
         return "Restaurant already exists...";
-    
-    /*if($opening >= $closed)
+ 
+    /*if($opening >= $closing)
     return "Invalid opening time...".$opening.$closing;*/
     
-    /* if (strlen($name) < 1)
-    return "Name is too small..." */
-    ;
-    
-    if ($code != "666")
-        return "Code doesn't match...";
+    if (strlen($name) < 1)
+    return "Name is too small..." ;
+
 }
 
 if (checkParameters())

@@ -5,9 +5,8 @@
     include_once('database/restaurants.php');
     
     $restaurant=getRestaurant($_GET['id']);
-
     $reviews=getReviewsForRestaurant($restaurant['id']);
-	
+	$images = getImagesForRestaurant($restaurant['id']);
 	$restaurant_page = TRUE;
 ?>
 <!DOCTYPE html>
