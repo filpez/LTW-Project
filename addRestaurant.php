@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Add Restaurant</title>
         <meta charset="utf-8"/>
         <link href="styles/clear.css" rel="stylesheet">
         <link href="styles/mainstyle.css" rel="stylesheet">
@@ -20,7 +20,9 @@
     </head>
     <?php
 		include('templates/header.php');
-		include('templates/add_restaurant.php');
+        if(!isset($_SESSION['username']) || !usernameExists($_SESSION['username']))
+            echo "<p>Page meant only for users who are logged in...</p>";
+		else include('templates/add_restaurant.php');
 		include('templates/footer.php');
 	?>
 </html>
