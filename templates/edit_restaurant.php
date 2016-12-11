@@ -1,4 +1,4 @@
-<div id="manage_restaurant">
+<div class="manage_restaurant">
 	<form action="database/editRestaurant.php" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="res_id" value="<?=$_GET['id']?>">
 		<label>NAME<input name="name" type="text" value="<?=$restaurant['name']?>" ></label>
@@ -8,13 +8,15 @@
 		<label>CLOSING HOURS<input name="closing" type="time" value="<?=$restaurant['closing_hours']?>"></label>
 		<input type="submit" value="Save">
 	</form>
-	
+</div>
+<div class="manage_restaurant">
 	<form action="database/addImage.php" enctype="multipart/form-data" method="post">
 		<input type="hidden" name="name" value="<?=$restaurant['name']?>">
 		<label>ADD IMAGE<input id="photo" name="photo" type="file"></label>
 		<input type="submit" id="addPhotoBtn" value="Add">
 	</form>
-
+</div>
+<div class="manage_restaurant">
 	<form action="database/addPhoto.php" enctype="multipart/form-data" method="post">
 		<label>DELETE IMAGE</label>
 		<?php 
@@ -25,5 +27,4 @@
 			}
 		?>
 	</form>
-
 </div>

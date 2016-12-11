@@ -1,7 +1,7 @@
-﻿/*
+/*
 ------------------  Add Restaurant Form ----------------------
 */
-#manage_restaurant{
+.manage_restaurant{
 	text-align: center;
 	min-width: 600px;
 	font-size: 1.2em;
@@ -13,14 +13,14 @@
 	border-radius:30px;
 }
 
-#manage_restaurant label{
+.manage_restaurant label{
 	display: block;
 	vertical-align: middle;
 	margin: 15px auto;
 	box-sizing: border-box;
 }
 
-#manage_restaurant input, textarea{
+.manage_restaurant input, textarea{
 	text-align: center;
     display: block;
 	width: 90%;
@@ -28,10 +28,15 @@
 	padding: 10px;
 	box-sizing: border-box;
 	border: 2px solid rgb(86, 76, 66);
-	border-radius:90px;
+	border-radius:30px;
 }
 
-#manage_restaurant img{
+.manage_restaurant img{
 	display: inline-block;
 	margin: 10px;
+}
+
+.manage_restaurant textarea{
+	max-width: 90%;
+	min-width: 90%;
 }
