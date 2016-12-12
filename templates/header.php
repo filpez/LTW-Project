@@ -1,7 +1,4 @@
-<?php
-    
-    $owner_options = array('Add a restaurant' => 'addRestaurant.php', 'Manage Restaurants' => '404.php');
-?>
+
     <body>
         <div id="header">
        		<a href="home.php">
@@ -25,13 +22,12 @@
 		</div>
         <div id="menu">
             <ul>
-                <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){
-                    if(isOwner($_SESSION['username'])) {
-                        foreach ($owner_options as $title => $link) { ?>
-                            <li><a href=<?=$link?>><?=$title?></a></li>
-                        <?php }
-                        if(isset($restaurant_page) && $restaurant_page) { ?>
-				            <li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> >Edit Restaurant</li>;
+                <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){ ?>
+                    <li><a href="addRestaurant.php">Add a restaurant</a></li>
+                    <?php if(isOwner($_SESSION['username'])) { ?>
+                        <li><a href="404.php">Manage Restaurants</a></li>
+                        <?php if(isset($restaurant_page) && $restaurant_page) { ?>
+				            <li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> >Edit Restaurant</a></li>;
                 <?php }}} else { ?> <!-- if not user -->
                     <li><a href="register.php">Register</a></li>
 				<?php } ?>

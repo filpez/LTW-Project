@@ -60,7 +60,6 @@
         return $user['username'];
 	}
 
-	//TO BE USED FOR my_page.php
 	function getRestaurantsFromUser($username){
 		global $db;
 		$stmt = $db->prepare('SELECT * FROM user INNER JOIN restaurant ON user.id=restaurant.owner_id WHERE user.username=:username');

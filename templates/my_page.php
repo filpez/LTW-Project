@@ -3,8 +3,3 @@
 	<p class="username">Name: <?=$user['name']?></p>
 	<p class="username">Email: <?=$user['email']?></p>
 </div>
-
-
-<div class="restaurants">
-
-</div>

@@ -21,6 +21,7 @@
     </head>
 	<?php
 		include('templates/header.php');
+        $restaurants = getAllRestaurants();
 		include('templates/list_restaurants.php');
 		include('templates/footer.php');
 	?>
