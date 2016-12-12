@@ -28,7 +28,9 @@
     </head>
 	<?php
 		include('templates/header.php');
-		include('templates/restaurant.php');
+		if($restaurant != 0)
+            include('templates/restaurant.php');
+        else echo "<h4>Restaurant not found...</h4>";
 		include('templates/footer.php');
 	?>
 </html>
