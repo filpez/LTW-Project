@@ -3,7 +3,8 @@ function addImage($db, $id){
 	$name = $_POST['name'];
 
 	if($id == NULL){
-		$stmt = $db->prepare("Select * From restaurant where name='$name'");
+		$stmt = $db->prepare("Select * From restaurant where name=:name");
+		$stmt->bindParam(':name',$name,PDO::PARAM_STR);
     	$stmt->execute();
     	$result = $stmt->fetchAll();
 		if(count($result) == 0)
@@ -37,7 +38,8 @@ function addImage($db, $id){
 	
 	//Save image
 	list($txt, $ext) = explode(".", $imgname);
-	$actual_image_name = time().$name.".".$ext;
+	//$actual_image_name = time().$name.".".$ext;
+	$actual_image_name = time().".".$ext;
 	if(move_uploaded_file($tmp, $path.$actual_image_name)){
 		echo "<img src='uploads/".$actual_image_name."' class='preview'>";
 	}
@@ -47,7 +49,9 @@ function addImage($db, $id){
 	}
 
 	echo $id." ".$actual_image_name;
-	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$actual_image_name')");
+	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES(:id, :actual_image_name)");
+	$stmt->bindParam(':id',$id,PDO::PARAM_INT);
+	$stmt->bindParam(':actual_image_name',$actual_image_name,PDO::PARAM_STR);
     $stmt->execute();
 }
 
