@@ -17,19 +17,15 @@ function addNewRestaurant(){
     global $closing;
     global $id;
     
-    $stmt = $db->prepare("INSERT INTO restaurant(name, local, description, opening_hours, closing_hours) VALUES('$name','$local', '$description','$opening', '$closing')");
+    $stmt = $db->prepare("INSERT INTO restaurant(name, local, description, opening_hours, closing_hours) VALUES(:name, :local, :description,'$opening', '$closing')");
+    $stmt->bindParam(':name',$name,PDO::PARAM_STR);
+    $stmt->bindParam(':local',$local,PDO::PARAM_STR);
+    $stmt->bindParam(':description',$description,PDO::PARAM_STR);
     $stmt->execute();
 	
 
 	$id = $db->lastInsertId();
 	include('addImage.php');
-	//$path = addImage($id);
-	/*$noImagePath = "../../resources/snorlax.jpg";
-    if ($path < 0)
-    	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$noImagePath')");
-    else
-    	$stmt = $db->prepare("INSERT INTO restaurant_image(restaurant_id,img_path) VALUES('$id', '$path')");
-    $stmt->execute();*/
 }
 
 function checkParameters() {
@@ -40,7 +36,8 @@ function checkParameters() {
     global $closing;
     global $code;
 	
-    $stmt = $db->prepare("SELECT * FROM restaurant WHERE name='$name'");
+    $stmt = $db->prepare("SELECT * FROM restaurant WHERE name=:name");
+    $stmt->bindParam(':name',$name,PDO::PARAM_STR);
     $stmt->execute();  
     $result = $stmt->fetchAll(); 
     if (count($result) != 0)
