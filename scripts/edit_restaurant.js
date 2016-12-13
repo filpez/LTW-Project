@@ -17,4 +17,27 @@ $ (function() {
         }); 
         return false;
     });
+
+    var addPhotoBtn = $("#addPhotoBtn");
+    addPhotoBtn.click ( function(event){
+        event.preventDefault();
+        var formData = new FormData($("#addPhotoForm")[0]);
+        $.ajax({
+            type: "POST",
+            url: "database/addImage.php",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: formData
+ 
+        }).done(function( msg ) {
+            if (msg.length > 0)
+                alert(msg);
+            else{
+                $("#addPhotoForm #photo").val("");
+                alert("Success"); 
+            }
+        }); 
+        return false;
+    });
 });
