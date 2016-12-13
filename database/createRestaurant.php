@@ -26,6 +26,7 @@ function addNewRestaurant(){
 
 	$id = $db->lastInsertId();
 	include('addImage.php');
+	return $id;
 }
 
 function checkParameters() {
@@ -43,9 +44,6 @@ function checkParameters() {
     if (count($result) != 0)
         return "Restaurant already exists...";
 	
-	/*if($opening >= $closed)
-		return "Invalid opening time...".$opening.$closing;*/
-	
     if (strlen($name) < 1)
         return "Name is too small...";
 
@@ -56,5 +54,5 @@ function checkParameters() {
 if(checkParameters())
     echo checkParameters();
 else
-    addNewRestaurant();
+    echo addNewRestaurant();
 ?>

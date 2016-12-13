@@ -7,6 +7,6 @@
 		<label>OPENING HOURS<input type="time" name="opening"></label>
 		<label>CLOSING HOURS<input type="time" name="closing"></label><img src="resources/secure.png" alt="Secure Code" width="60" height="40"> 
 		<label>ARE YOU AN HUMAN? INSERT THE NUMBER ABOVE TO PROVE IT!<input type="text" name="code"></label>
-		<input type="submit" value="Send">
+		<input id="submit" type="submit" value="Send">
 	</form>
 </div>

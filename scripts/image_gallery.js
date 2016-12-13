@@ -3,14 +3,6 @@ $ (function() {
     var images = document.getElementsByClassName("photo");
     var modal = $("#modal");
     var modal_image = $("#modal .modal_image");
-    /*//for (var i = 0; i < images.length; i++){
-        //$(images[i]).click ( function(){
-        $(images).click ( function(){
-            modal_image.attr("src", this.src);
-            index = $(images).index();
-            modal.css("display", "block");
-        });
-    //};*/
 
     for (var i = 0; i < images.length; i++){
         images[i].index = i;
