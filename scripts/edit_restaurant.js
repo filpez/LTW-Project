@@ -17,22 +17,4 @@ $ (function() {
         }); 
         return false;
     });
-
-    var addPhotoBtn = $("#addPhotoBtn");
-    addPhotoBtn.click ( function(event){
-        event.preventDefault();
-        var formData = new FormData($("#addPhotoForm")[0]);
-        $.ajax({
-            type: "POST",
-            url: "database/addImage.php",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: formData
- 
-        }).done(function( msg ) {
-            alert(msg);
-        }); 
-        return false;
-    });
 });

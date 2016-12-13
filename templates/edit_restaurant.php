@@ -10,8 +10,8 @@
 	</form>
 </div>
 <div class="manage_restaurant">
-	<form id="addPhotoForm" action="database/addImage.php" enctype="multipart/form-data" method="post">
-		<input type="hidden" name="id" value="<?=$restaurant['id']?>">
+	<form action="database/addImage.php" enctype="multipart/form-data" method="post">
+		<input type="hidden" name="name" value="<?=$restaurant['name']?>">
 		<label>ADD IMAGE<input id="photo" name="photo" type="file"></label>
 		<input type="submit" id="addPhotoBtn" value="Add">
 	</form>

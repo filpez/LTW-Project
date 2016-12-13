@@ -1,5 +1,5 @@
 <div class="manage_restaurant">
-	<form id="addRestaurantForm" action="database/createRestaurant.php" method="post"  enctype="multipart/form-data" >
+	<form action="database/createRestaurant.php" method="post"  enctype="multipart/form-data" >
 		<label>NAME<input type="text" name="name"></label>
 		<label>LOCAL<input type="text" name="local"></label>
 		<label>IMAGE<input type="file" id="photo" name="photo"></label>
