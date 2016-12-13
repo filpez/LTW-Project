@@ -6,7 +6,7 @@
 		<label>DESCRIPTION<textarea name="description" rows="7" cols="50"><?=$restaurant['description']?></textarea >
 		<label>OPENING HOURS<input name="opening" type="time" value="<?=$restaurant['opening_hours']?>"></label>
 		<label>CLOSING HOURS<input name="closing" type="time" value="<?=$restaurant['closing_hours']?>"></label>
-		<input type="submit" value="Save">
+		<input id="save" type="submit" value="Save">
 	</form>
 </div>
 <div class="manage_restaurant">
