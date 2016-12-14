@@ -20,17 +20,17 @@ function addNewUser(){
 
     $hashed_password = sha1($password);
 
-    $stmt = $db->prepare("INSERT INTO user(username, name, password, email, date_created) VALUES('$username', '$name', '$hashed_password', '$email', datetime('now'))");
+    $stmt = $db->prepare('INSERT INTO user(username, name, password, email, date_created) VALUES(:username, :name, :hashed_password, :email, datetime(\'now\'))');
+    $stmt->bindParam(':username',$username,PDO::PARAM_STR);
+    $stmt->bindParam(':name',$name,PDO::PARAM_STR);
+    $stmt->bindParam(':hashed_password',$hashed_password,PDO::PARAM_STR);
+    $stmt->bindParam(':email',$email,PDO::PARAM_STR);
     $stmt->execute(); 
-    $stmt = $db->prepare("SELECT * FROM user WHERE username='$username'");
+    $stmt = $db->prepare("SELECT * FROM user WHERE username=:username");
+    $stmt->bindParam(':username',$username,PDO::PARAM_STR);
     $stmt->execute();  
     $result = $stmt->fetchAll();
     $id = $result[0]['id'];
-    if ($type == "owner")
-        $stmt = $db->prepare("INSERT INTO owner(id) VALUES('$id')");
-    else
-        $stmt = $db->prepare("INSERT INTO reviewer(id) VALUES('$id')");
-    $stmt->execute();
 }
 
 function addImage(){
@@ -112,12 +112,14 @@ function checkParameters() {
     $result = $stmt->fetchAll(); 
     if (count($result) != 0)
         return "Email already exists";
+    return "OK";
 }
-
-if(checkParameters())
-    showHeaderMessage(checkParameters());
+$result=checkParameters();
+if($result != "OK")
+    showHeaderMessage($result);
 
 else{
     addNewUser();
+    header('Location: '.$_SERVER['HTTP:REFERER']);
 }
 ?>
