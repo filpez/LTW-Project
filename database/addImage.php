@@ -65,7 +65,7 @@ if (!isset($id)){
 	 	if(!isset($name)){
 	 		$name = $_POST['name'];
 	 	}
-	 	$stmt = $db->prepare("Select * From restaurant where name=:name");
+	 	$stmt = $db->prepare("SELECT * FROM restaurant WHERE name=:name");
 	 	$stmt->bindParam(':name',$name,PDO::PARAM_STR);
 	 	$stmt->execute();
 	 	$result = $stmt->fetchAll();

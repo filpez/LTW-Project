@@ -101,13 +101,15 @@ function checkParameters() {
         return "Code doesn't match..."; 
 
 
-    $stmt = $db->prepare("SELECT * FROM user WHERE username='$username'");
+    $stmt = $db->prepare("SELECT * FROM user WHERE username=':username'");
+    $stmt->bindParam(':username',$username,PDO::PARAM_STR);
     $stmt->execute();  
     $result = $stmt->fetchAll(); 
     if (count($result) != 0)
         return "Username already exists";
     
-    $stmt = $db->prepare("SELECT * FROM user WHERE email='$email'");
+    $stmt = $db->prepare("SELECT * FROM user WHERE email=':email'");
+    $stmt->bindParam(':email',$username,PDO::PARAM_STR);
     $stmt->execute();  
     $result = $stmt->fetchAll(); 
     if (count($result) != 0)
