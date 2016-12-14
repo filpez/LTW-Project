@@ -17,7 +17,8 @@
 	</form>
 </div>
 <div class="manage_restaurant">
-<?php if (count($images)) { ?>
+	<p>DELETE IMAGE</p>
+	<?php if (count($images)) { ?>
 	<div id="image_gallery">
 		<?php 
 			foreach ($images as $image){
@@ -35,4 +36,7 @@
   		<img src="" class="modal_image">
 	</div>
 	<?php } ?>
+</div>
+<div class="manage_restaurant">
+	<button id="delete_all" type="button">Delete this restaurant!</button>
 </div>
