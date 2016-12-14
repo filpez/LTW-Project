@@ -1,0 +1,18 @@
+.user {
+	padding: 12px 20px;
+    margin: 8px 400px;
+    text-align: center;
+	background-color: #CCC5AA;
+	border-radius:30px;
+}
+
+.user h4 {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+	padding: 10px 0px;
+}
+
+.user input {
+	width : 200px;
+}
