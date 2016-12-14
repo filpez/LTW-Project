@@ -122,6 +122,6 @@ if($result != "OK")
 
 else{
     addNewUser();
-    header('Location: '.$_SERVER['HTTP:REFERER']);
+    header('Location: '.$_SERVER['HTTP_REFERER']);
 }
 ?>
