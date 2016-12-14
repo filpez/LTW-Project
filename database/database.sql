@@ -1,4 +1,4 @@
-﻿/* CREATE TABLES */
+/* CREATE TABLES */
 
 CREATE TABLE user  (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,8 +56,5 @@ INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hou
 INSERT INTO review(reviewer_id,restaurant_id,points) VALUES(2,1,5);
 INSERT INTO review(reviewer_id,restaurant_id,points) VALUES(3,1,10);
 
-INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'../../resources/snorlax.jpg');
-INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(2,'../../resources/snorlax.jpg');
-INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(3,'../../resources/snorlax.jpg');
 INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'1480673678AAAAAAAA.jpg');
-INSERT INTO restaurant_image (restaurant_id, img_path) VALUES(1,'../../resources/secure.png');
+

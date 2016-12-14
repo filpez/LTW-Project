@@ -5,6 +5,7 @@
     include_once('database/user.php');
 	
 	$restaurant=getRestaurant($_GET['id']);
+	$images = getImagesForRestaurant($restaurant['id']);
 	
 	$restaurant_page = FALSE;
 ?>
@@ -19,6 +20,7 @@
         <link href="styles/manage_restaurant.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="scripts/search_text_fade.js"></script>
+        <script src="scripts/image_gallery.js"></script>
         <script src="scripts/edit_restaurant.js"></script>
     </head>
     <?php
