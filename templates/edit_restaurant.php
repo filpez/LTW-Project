@@ -17,14 +17,26 @@
 	</form>
 </div>
 <div class="manage_restaurant">
-	<form action="database/addPhoto.php" enctype="multipart/form-data" method="post">
-		<label>DELETE IMAGE</label>
+	<p>DELETE IMAGE</p>
+	<?php if (count($images)) { ?>
+	<div id="image_gallery">
 		<?php 
-			$images = getImagesForRestaurant($restaurant['id']);
 			foreach ($images as $image){
 				$image_path = $image["img_path"];
-				echo "<p>".$image_path."</p>";
+				echo '<img class="photo" src="database/uploads/'.$image_path.'" alt="300x200">';
 			}
 		?>
-	</form>
+	</div>
+
+	<div id="modal">
+		<span class="close">×</span>
+		<span class="left_arrow">&#060</span>
+		<span class="right_arrow">&#062</span>
+		<span class="delete">Delete</span>
+  		<img src="" class="modal_image">
+	</div>
+	<?php } ?>
+</div>
+<div class="manage_restaurant">
+	<button id="delete_all" type="button">Delete this restaurant!</button>
 </div>
