@@ -34,7 +34,9 @@
 			include('review.php');
 		} ?>
 	</div>
-	<?php } ?>
+	<?php }
+
+	if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])) { ?>
 	<div id="newReview">
 		<h3>New Review</h3>
 		<form class="addReview">
@@ -44,5 +46,6 @@
 	   		<input type="submit" value="Send">
 		</form>
 	</div>
+	<?php } ?>
 
 </div>

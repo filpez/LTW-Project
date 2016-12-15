@@ -25,7 +25,7 @@
                 <?php if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])){ ?>
                     <li><a href="addRestaurant.php">Add a restaurant</a></li>
                     <?php if(isOwner($_SESSION['username'])) { ?>
-                        <?php if(isset($restaurant_page) && $restaurant_page) { ?>
+                        <?php if(isset($restaurant_page) && $restaurant_page && userHasRestaurant($_SESSION['username'],$restaurant['id'])) { ?>
 				            <li><a href=<?="editRestaurant.php?id=".$restaurant['id']?> >Edit Restaurant</a></li>
                 <?php }}} else { ?> <!-- if not user -->
                     <li><a href="register.php">Register</a></li>

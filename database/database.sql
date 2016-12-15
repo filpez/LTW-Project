@@ -49,7 +49,7 @@ INSERT INTO user(username, name, password, email, date_created) VALUES('user02',
 INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'Grilled Pidgey','Pallet Town','A nice place to eat every kind of Pidgey for a great price.','19:00','00:00');
 INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(1,'Krusty Krabby','Celadon City','Best Krabby in the market!!!','10:00','22:00');
 INSERT INTO restaurant(owner_id,name,local,description,opening_hours,closing_hours) VALUES(2,'McGolduck''s','Safari Zone','Not McDonald''s','7:45','01:00');
-INSERT INTO restaurant(owner_id,name,local,description) VALUE(2, 'Ludicolo''s Tacos', 'Mexico, Mexico', 'BEST. TACOS. EVER');
+INSERT INTO restaurant(owner_id,name,local,description) VALUES(2, 'Ludicolo''s Tacos', 'Mexico, Mexico', 'BEST. TACOS. EVER');
 
 INSERT INTO restaurant_image(restaurant_id, img_path) VALUES(1, '1481819762.jpg');
 INSERT INTO restaurant_image(restaurant_id, img_path) VALUES(1, '1481819769.jpg');

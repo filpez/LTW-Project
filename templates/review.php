@@ -19,12 +19,13 @@
 	       </div>
 	<?php   
 	   }
-	?>
-
+	
+	if(isset($_SESSION['username']) && usernameExists($_SESSION['username'])) { ?>
     <form class="addComment">
        <input type="hidden" name="review_id" value=<?=$review['id']?>>
 	   <label>New comment:<textarea name="comment" rows="2" cols="50"></textarea></label>
 	   <input type="submit" value="Send">
 	</form>
+	<?php } ?>
 </div>
 
