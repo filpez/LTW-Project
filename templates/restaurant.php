@@ -30,17 +30,9 @@
 	<?php if (count($reviews)) { ?>
 	<div class="comments">
 		<h3 id="comments_title">Comments:</h3>
-		<?php foreach ($reviews as $review) { ?>
-			<div class="comment">
-			<?php 
-				$berry_type = rand(1,4);
-				for ($i = 1; $i <= $review['points']; $i++) {
-					echo '<img class="berry" src="resources/berry'.$berry_type.'.png" alt="berry">';
-				} ?>
-				<h3><span class="name"> by <?=getUsername($review['reviewer_id'])?></span></h3>
-				<p> <?=$review['comment']?> </p>
-			</div>
-		<?php } ?>
+		<?php foreach ($reviews as $review) {
+			include('review.php');
+		} ?>
 	</div>
 	<?php } ?>
 </div>

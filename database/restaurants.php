@@ -41,6 +41,16 @@
 		return $reviews;
 	}
 
+	function getComments($reviewID){
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM comment WHERE review_id=:reviewID');
+		$stmt->bindParam(':reviewID',$reviewID,PDO::PARAM_INT);
+		$stmt->execute();
+		$comments=$stmt->fetchAll();
+
+		return $comments;
+	}
+
 	function getImagesForRestaurant($restaurantID){
 		global $db;
 		$stmt = $db->prepare('SELECT * FROM restaurant_image WHERE restaurant_id=:restaurantID');
