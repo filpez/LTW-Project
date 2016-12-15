@@ -7,7 +7,6 @@
     $c_password = $_POST['c_password'];
     $email = $_POST['email'];
     $c_email = $_POST['c_email'];
-    $type = $_POST['type'];
     $code = $_POST['code'];
 
 function addNewUser(){
@@ -15,7 +14,6 @@ function addNewUser(){
     global $username;
     global $name;
     global $password;
-    global $type;
     global $email;
 
     $hashed_password = sha1($password);
@@ -122,6 +120,6 @@ if($result != "OK")
 
 else{
     addNewUser();
-    header('Location: '.$_SERVER['HTTP_REFERER']);
+    header('Location: '.$_SERVER['HTTP_REFERER']."/../home.php");
 }
 ?>
