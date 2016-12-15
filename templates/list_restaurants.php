@@ -13,13 +13,16 @@
 					echo '<img class="photo" src="resources/snorlax.jpg" alt="300x200">';
 
 		?>
-		<p class="points">Pontos: <?=getRestaurantScore($restaurant['id'])?> em 10</p>
+		<p class="points">Points: <?= getRestaurantScore($restaurant['id'])=="-" ? "No users reviewed this restaurant yet" : getRestaurantScore($restaurant['id'])." em 10"?></p>
 		<p class="place"> <?=$restaurant['local']?> </p>
 		<p class="description"> <?=$restaurant['description']?> </p>
-		<p class="opening"> Aberto a partir das <?=$restaurant['opening_hours']?> </p>
+		<?php if($restaurant['opening_hours'] != "") { ?>
+			<p class="opening"> Aberto a partir das <?=$restaurant['opening_hours']?> </p>
+		<?php } if($restaurant['closing_hours'] != "") { ?>
 		<p class="closing"> Fecha às <?=$restaurant['closing_hours']?> </p>
+		<?php } ?>
 		<ul>
-			<li><a href=<?="restaurant.php?id=".$restaurant['id']?> >ver críticas (<?=sizeof(getReviewsForRestaurant($restaurant['id']))?>)</a></li>
+			<li><a href=<?="restaurant.php?id=".$restaurant['id']?> >see reviews (<?=sizeof(getReviewsForRestaurant($restaurant['id']))?>)</a></li>
 		</ul>
 	</div>
 <?php } ?>
