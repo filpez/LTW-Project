@@ -10,7 +10,7 @@ $ (function() {
     var search = $("#adv_search_field");
     var search_btn = $("#adv_search_button");
     search_btn.click ( function(event){
-        if (!search.val())
+        if (!search.val() && !$("input[name=local]").val() && !$("input[name=owner]").val())
             event.preventDefault();
         else{
             var data = {search_field: search.val()}
