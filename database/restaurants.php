@@ -81,4 +81,14 @@
 		else return false;
 	}
 
+	function getComments($reviewID){
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM comment WHERE review_id=:reviewID');
+		$stmt->bindParam(':reviewID',$reviewID,PDO::PARAM_INT);
+		$stmt->execute();
+		$comments=$stmt->fetchAll();
+
+		return $comments;
+	}
+
 ?>
