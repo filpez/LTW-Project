@@ -4,7 +4,7 @@
     include_once('database/restaurants.php');
     include_once('database/user.php');
 	
-	$restaurant=getRestaurant($_GET['id']);
+	$restaurant=getRestaurant(htmlentities(strip_tags($_GET['id'])));
 	$images = getImagesForRestaurant($restaurant['id']);
 	
 	$restaurant_page = FALSE;
@@ -30,7 +30,7 @@
             echo "<p>Page meant only for users who are logged in...</p>";
         else if(!$restaurant)
             echo "<p>Restaurant does not exist...</p>";
-        else if(userHasRestaurant($_SESSION['username'],$restaurant))
+        else if(userHasRestaurant($_SESSION['username'],$restaurant['id']))
                 include('templates/edit_restaurant.php');
         else echo "<p>Page meant only for the owner of this restaurant...</p>";
 		
