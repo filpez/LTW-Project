@@ -48,10 +48,11 @@
 
 		//check original pass
 		$hashed_password = sha1($pass);
-		if($originalPass != $hashed_password)
-			return "Original password is incorrect";
+		if($originalPass == $hashed_password)
+			return "OK";
+		else return "Original password is incorrect";
 
-		return "OK";
+		
 	}
 
 	function updateUser(){
