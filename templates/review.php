@@ -15,7 +15,7 @@
 	?>
 	       <div class="comment">
 	           <p> <?=$comment['comment']?> </p>
-	           <h3><span class="name"> by <?=getUsername($comment['owner_id'])?></span></h3>
+	           <h3><span class="name"> by <?=getUsername($comment['reviewer_id'])?></span></h3>
 	       </div>
 	<?php   
 	   }
