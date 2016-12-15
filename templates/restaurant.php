@@ -35,4 +35,14 @@
 		} ?>
 	</div>
 	<?php } ?>
+	<div id="newReview">
+		<h3>New Review</h3>
+		<form class="addReview">
+       		<input type="hidden" name="review_id" value=<?=$restaurant['id']?>>
+       		<label>Rating: <span id="value">0</span><input type="range" name="value" value="0" min="0" max="10"></label>
+	   		<label>Comment:<textarea name="comment" rows="2" cols="50"></textarea></label>
+	   		<input type="submit" value="Send">
+		</form>
+	</div>
+
 </div>
