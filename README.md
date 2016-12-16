@@ -1,3 +1,9 @@
 # LTW-Project
 
-Eu n sei se o que voces usam, mas o mangose parece funcionar, por isso deixei no repositorio ;)
+### Snorlax's Diary
+
+>"If Snorlax likes, so will you!"
+
+Website designed with HTML, CSS, PHP, JavaScript (JQuery) and a lot of roundness. Snorlax loved it!
+
+<img src="./resources/snorlax.jpg">
